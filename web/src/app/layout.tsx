@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter, Nunito } from 'next/font/google'
 import './globals.css'
 
@@ -25,6 +25,9 @@ export const metadata: Metadata = {
     siteName: 'Tipss',
     type: 'website',
   },
+}
+
+export const viewport: Viewport = {
   themeColor: '#0DAF5C',
 }
 

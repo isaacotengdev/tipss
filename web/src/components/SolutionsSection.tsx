@@ -107,7 +107,6 @@ export default function SolutionsSection() {
                 <div className="flex flex-wrap gap-3">
                   <a
                     href="#download"
-                    onClick={(e) => { e.preventDefault(); document.querySelector('#download')?.scrollIntoView({ behavior: 'smooth' }) }}
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border text-sm font-medium transition-colors hover:opacity-80"
                     style={{ borderColor: product.accent, color: product.accent }}
                   >
@@ -118,7 +117,6 @@ export default function SolutionsSection() {
                   </a>
                   <a
                     href="#download"
-                    onClick={(e) => { e.preventDefault(); document.querySelector('#download')?.scrollIntoView({ behavior: 'smooth' }) }}
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border text-sm font-medium transition-colors hover:opacity-80"
                     style={{ borderColor: product.accent, color: product.accent }}
                   >
