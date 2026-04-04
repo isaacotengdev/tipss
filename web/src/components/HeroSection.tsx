@@ -10,7 +10,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="bg-[#F0FAF5] pt-[68px] min-h-screen flex flex-col md:flex-row"
+      className="bg-[#F0FAF5] pt-[68px] h-screen flex flex-col md:flex-row"
     >
       {/* Left — Text */}
       <div className="flex-1 flex items-center px-6 md:px-20 py-16 md:py-0">
@@ -73,12 +73,13 @@ export default function HeroSection() {
       </div>
 
       {/* Right — Image */}
-      <div className="flex-1 relative min-h-[320px] md:min-h-0">
+      <div className="flex-1 flex items-center justify-center overflow-hidden">
         <Image
           src="/images/cs-psi-pay-thumbnail.jpg"
           alt="Service worker receiving a digital tip"
-          fill
-          style={{ objectFit: 'cover' }}
+          width={900}
+          height={600}
+          style={{ width: '100%', height: '100%', objectFit: 'contain' }}
           priority
           sizes="(max-width: 768px) 100vw, 50vw"
         />
