@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/gestures.dart';
 import '../../core/constants/app_constants.dart';
 import '../sections/nav/nav_bar.dart';
 import '../sections/hero/hero_section.dart';
@@ -8,6 +9,15 @@ import '../sections/downloads/downloads_section.dart';
 import '../sections/about/about_section.dart';
 import '../sections/faq/faq_section.dart';
 import '../sections/footer/footer_section.dart';
+
+class _WebScrollBehavior extends MaterialScrollBehavior {
+  @override
+  Set<PointerDeviceKind> get dragDevices => {
+        PointerDeviceKind.touch,
+        PointerDeviceKind.mouse,
+        PointerDeviceKind.trackpad,
+      };
+}
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -60,7 +70,9 @@ class _HomePageState extends State<HomePage> {
       body: Stack(
         children: [
           // Scrollable content
-          SingleChildScrollView(
+          ScrollConfiguration(
+            behavior: _WebScrollBehavior(),
+            child: SingleChildScrollView(
             controller: _scrollController,
             child: Column(
               children: [
@@ -102,6 +114,7 @@ class _HomePageState extends State<HomePage> {
                 const FooterSection(),
               ],
             ),
+          ),
           ),
 
           // Sticky Nav overlay
