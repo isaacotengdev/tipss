@@ -41,7 +41,7 @@ export default function Navbar() {
           : 'bg-white/90 backdrop-blur-sm'
       }`}
     >
-      <div className="flex items-center justify-between px-8 h-[68px] max-w-[1400px] mx-auto">
+      <div className="flex items-center justify-between pl-6 pr-8 h-[68px]">
         {/* Logo */}
         <button onClick={() => handleNav('#home')} className="flex-shrink-0">
           <Image
