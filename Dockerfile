@@ -1,25 +1,20 @@
-# ── Stage 1: Build Flutter web ─────────────────────────────────────────────────
-FROM ghcr.io/cirruslabs/flutter:stable AS builder
+# ── Stage 1: Build Next.js ─────────────────────────────────────────────────────
+FROM node:20-alpine AS builder
 
 WORKDIR /app
 
-# Copy project files
-COPY tipss_web/ ./
+COPY web/package*.json ./
+RUN npm ci
 
-# Fetch dependencies and build
-RUN flutter pub get
-RUN flutter build web --release --no-tree-shake-icons
+COPY web/ ./
+RUN npm run build
 
 # ── Stage 2: Serve with Nginx ──────────────────────────────────────────────────
 FROM nginx:alpine AS runner
 
-# Remove default Nginx page
 RUN rm -rf /usr/share/nginx/html/*
 
-# Copy Flutter build output
-COPY --from=builder /app/build/web /usr/share/nginx/html
-
-# Copy our Nginx config
+COPY --from=builder /app/out /usr/share/nginx/html
 COPY deploy/nginx/tipss.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80

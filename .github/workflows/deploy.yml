@@ -3,11 +3,11 @@ name: Build & Deploy to DigitalOcean
 on:
   push:
     branches: [main]
-  workflow_dispatch: # allow manual trigger from GitHub UI
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
-    name: Build Flutter Web & Deploy
+    name: Build Next.js & Deploy
     runs-on: ubuntu-latest
     timeout-minutes: 20
 
@@ -16,35 +16,33 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2 ── Set up Flutter
-      - name: Set up Flutter
-        uses: subosito/flutter-action@v2
+      # 2 ── Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          channel: stable
-          cache: true
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: web/package-lock.json
 
       # 3 ── Install dependencies
-      - name: Install Flutter dependencies
-        working-directory: tipss_web
-        run: flutter pub get
+      - name: Install dependencies
+        working-directory: web
+        run: npm ci
 
-      # 4 ── Build Flutter Web (HTML renderer for best SEO + compatibility)
-      - name: Build Flutter Web
-        working-directory: tipss_web
-        run: |
-          flutter build web \
-            --release \
-            --no-tree-shake-icons
+      # 4 ── Build Next.js (static export)
+      - name: Build Next.js
+        working-directory: web
+        run: npm run build
 
-      # 5 ── Upload build artefact (useful for debugging)
+      # 5 ── Upload build artefact
       - name: Upload build artefact
         uses: actions/upload-artifact@v4
         with:
           name: tipss-web-build
-          path: tipss_web/build/web
+          path: web/out
           retention-days: 7
 
-      # 6 ── Copy build to DigitalOcean droplet via SCP
+      # 6 ── Deploy to DigitalOcean droplet via SCP
       - name: Deploy to droplet (SCP)
         uses: appleboy/scp-action@v0.1.7
         with:
@@ -52,11 +50,11 @@ jobs:
           username: ${{ secrets.DO_USER }}
           key: ${{ secrets.DO_SSH_KEY }}
           port: 22
-          source: "tipss_web/build/web/*"
+          source: "web/out/*"
           target: "/var/www/tipss_web"
-          strip_components: 3   # removes "tipss_web/build/web" prefix
+          strip_components: 2
 
-      # 7 ── Reload Nginx to pick up any config changes
+      # 7 ── Reload Nginx
       - name: Reload Nginx on droplet
         uses: appleboy/ssh-action@v1.0.3
         with:
