@@ -33,7 +33,6 @@ jobs:
         working-directory: tipss_web
         run: |
           flutter build web \
-            --web-renderer html \
             --release \
             --no-tree-shake-icons
 

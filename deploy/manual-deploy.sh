@@ -19,7 +19,7 @@ fi
 echo "▶ Building Flutter web..."
 cd tipss_web
 flutter pub get
-flutter build web --web-renderer html --release --no-tree-shake-icons
+flutter build web --release --no-tree-shake-icons
 cd ..
 
 echo "▶ Uploading to $DROPLET:$WEB_ROOT ..."
