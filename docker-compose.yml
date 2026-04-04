@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  tipss_web:
+    image: tipss_web:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tipss_web
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      # Mount Let's Encrypt certs when HTTPS is enabled
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+    networks:
+      - tipss_net
+
+networks:
+  tipss_net:
+    driver: bridge

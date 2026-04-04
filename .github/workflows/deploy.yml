@@ -1,0 +1,70 @@
+name: Build & Deploy to DigitalOcean
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # allow manual trigger from GitHub UI
+
+jobs:
+  build-and-deploy:
+    name: Build Flutter Web & Deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      # 1 ── Checkout source
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2 ── Set up Flutter
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      # 3 ── Install dependencies
+      - name: Install Flutter dependencies
+        working-directory: tipss_web
+        run: flutter pub get
+
+      # 4 ── Build Flutter Web (HTML renderer for best SEO + compatibility)
+      - name: Build Flutter Web
+        working-directory: tipss_web
+        run: |
+          flutter build web \
+            --web-renderer html \
+            --release \
+            --no-tree-shake-icons
+
+      # 5 ── Upload build artefact (useful for debugging)
+      - name: Upload build artefact
+        uses: actions/upload-artifact@v4
+        with:
+          name: tipss-web-build
+          path: tipss_web/build/web
+          retention-days: 7
+
+      # 6 ── Copy build to DigitalOcean droplet via SCP
+      - name: Deploy to droplet (SCP)
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.DO_HOST }}
+          username: ${{ secrets.DO_USER }}
+          key: ${{ secrets.DO_SSH_KEY }}
+          port: 22
+          source: "tipss_web/build/web/*"
+          target: "/var/www/tipss_web"
+          strip_components: 3   # removes "tipss_web/build/web" prefix
+
+      # 7 ── Reload Nginx to pick up any config changes
+      - name: Reload Nginx on droplet
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.DO_HOST }}
+          username: ${{ secrets.DO_USER }}
+          key: ${{ secrets.DO_SSH_KEY }}
+          port: 22
+          script: |
+            sudo nginx -t && sudo systemctl reload nginx
+            echo "✅ Deployment complete — $(date)"
