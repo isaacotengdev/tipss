@@ -9,17 +9,17 @@ set -euo pipefail
 DROPLET="${1:-}"
 DEPLOY_USER="deploy"
 WEB_ROOT="/var/www/tipss_web"
-LOCAL_BUILD="tipss_web/build/web"
+LOCAL_BUILD="web/out"
 
 if [[ -z "$DROPLET" ]]; then
   echo "Usage: bash deploy/manual-deploy.sh <droplet-ip-or-domain>"
   exit 1
 fi
 
-echo "▶ Building Flutter web..."
-cd tipss_web
-flutter pub get
-flutter build web --release --no-tree-shake-icons
+echo "▶ Building Next.js..."
+cd web
+npm install
+npm run build
 cd ..
 
 echo "▶ Uploading to $DROPLET:$WEB_ROOT ..."
