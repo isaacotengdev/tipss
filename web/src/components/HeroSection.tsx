@@ -79,7 +79,7 @@ export default function HeroSection() {
             src="/images/cs-psi-pay-thumbnail.jpg"
             alt="Service worker receiving a digital tip"
             fill
-            style={{ objectFit: 'cover' }}
+            style={{ objectFit: 'contain' }}
             priority
             sizes="(max-width: 768px) 100vw, 50vw"
           />
