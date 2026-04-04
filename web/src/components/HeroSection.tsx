@@ -73,17 +73,15 @@ export default function HeroSection() {
       </div>
 
       {/* Right — Image */}
-      <div className="flex-1 p-6 md:p-12 md:pl-4 flex items-stretch min-h-[320px] md:min-h-0">
-        <div className="relative w-full rounded-2xl overflow-hidden">
-          <Image
-            src="/images/cs-psi-pay-thumbnail.jpg"
-            alt="Service worker receiving a digital tip"
-            fill
-            style={{ objectFit: 'contain' }}
-            priority
-            sizes="(max-width: 768px) 100vw, 50vw"
-          />
-        </div>
+      <div className="flex-1 relative min-h-[320px] md:min-h-0">
+        <Image
+          src="/images/cs-psi-pay-thumbnail.jpg"
+          alt="Service worker receiving a digital tip"
+          fill
+          style={{ objectFit: 'cover' }}
+          priority
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
       </div>
     </section>
   )
