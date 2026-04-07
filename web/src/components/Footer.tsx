@@ -18,7 +18,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="flex-[3]">
             <Image
-              src="/images/LOGO.png"
+              src="/images/logo.png"
               alt="Tipss"
               height={40}
               width={110}

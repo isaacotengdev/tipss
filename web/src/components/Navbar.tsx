@@ -45,7 +45,7 @@ export default function Navbar() {
         {/* Logo */}
         <button onClick={() => handleNav('#home')} className="flex-shrink-0">
           <Image
-            src="/images/LOGO.png"
+            src="/images/logo.png"
             alt="Tipss"
             height={44}
             width={130}
