@@ -10,7 +10,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="bg-[#F0FAF5] pt-[68px] flex flex-col md:flex-row"
+      className="bg-[#F0FAF5] pt-[88px] flex flex-col md:flex-row"
     >
       {/* Left — Text */}
       <div className="flex-1 flex items-center px-6 md:px-20 py-16 md:py-0">
