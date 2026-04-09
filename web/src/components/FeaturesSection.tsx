@@ -26,8 +26,17 @@ export default function FeaturesSection() {
   const accent = tab === 'tipme' ? '#0DAF5C' : '#8B5CF6'
 
   return (
-    <section className="bg-surface py-24 px-6 md:px-20">
-      <div className="max-w-6xl mx-auto">
+    <section
+      className="relative py-24 px-6 md:px-20"
+      style={{
+        backgroundImage: "url('/images/african-business-male-people-shaking-hands.jpg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
+      <div className="absolute inset-0 bg-white/85" />
+      <div className="relative max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
           <p className="text-xs font-bold tracking-widest text-brand-green uppercase font-sans mb-3">
@@ -93,3 +102,4 @@ export default function FeaturesSection() {
     </section>
   )
 }
+
