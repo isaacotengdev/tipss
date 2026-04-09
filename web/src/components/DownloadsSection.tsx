@@ -13,9 +13,9 @@ export default function DownloadsSection() {
   ]
 
   const stats = [
-    { value: '10k+', label: 'Downloads', accent: '#0DAF5C' },
+    { value: '500', label: 'Downloads', accent: '#0DAF5C' },
     { value: '4.8★', label: 'App Rating', accent: '#F59E0B' },
-    { value: '50+', label: 'Countries', accent: '#8B5CF6' },
+    { value: '5+', label: 'Countries', accent: '#8B5CF6' },
   ]
 
   return (

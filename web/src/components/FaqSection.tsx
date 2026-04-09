@@ -16,11 +16,11 @@ const FAQS = [
   },
   {
     q: 'Are there fees for receiving tips?',
-    a: 'With TipMe, recipients keep 100% of every tip. Tipss charges a small convenience fee to the person giving the tip, not the person receiving it. TipBiz is available on a monthly subscription — no per-transaction fees.',
+    a: 'With TipMe, you receive almost the full value of every tip for a small fee, while tippers enjoy only small, transparent convenience charges. TipBiz runs on a simple monthly subscription, so you never have to worry about per-transaction fees.',
   },
   {
     q: 'Is Tipss available in my country?',
-    a: "Tipss is currently available in 50+ countries across Africa and expanding globally. Check the App Store or Google Play listing for your region's availability.",
+    a: "Tipss is currently available across Africa and expanding globally. Check the App Store or Google Play listing for your region's availability.",
   },
   {
     q: 'How long does it take to receive a payout?',

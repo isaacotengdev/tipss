@@ -2,13 +2,13 @@ export default function SolutionsSection() {
   const products = [
     {
       name: 'TipMe',
-      tagline: 'Your personal tipping link, ready in seconds.',
+      tagline: 'Your personal tipping QR code or link, ready in seconds.',
       description:
-        'TipMe gives every individual a simple, shareable way to receive tips. Generate your unique QR code, share your link, and get paid — with no cash, no awkwardness, and zero fees for recipients.',
+        'TipMe gives every individual a simple, shareable way to receive tips. Generate your unique QR code, share, and get paid — with no cash, no awkwardness, and zero fees for recipients.',
       highlights: [
-        'Instant payouts to your bank',
+        'Instant payouts to your bank or wallet',
         'Share via QR code or link',
-        'Zero fees for recipients',
+        'Zero fees',
       ],
       accent: '#0DAF5C',
       gradientFrom: '#0DAF5C',
@@ -48,9 +48,6 @@ export default function SolutionsSection() {
           <p className="text-xs font-bold tracking-widest text-brand-green uppercase font-sans mb-3">
             Our Products
           </p>
-          <h2 className="font-display font-extrabold text-4xl md:text-5xl text-foreground mb-4">
-            Two Apps, One Mission
-          </h2>
           <p className="text-muted-light text-lg max-w-xl mx-auto">
             Whether you&apos;re an individual looking to earn more or a business wanting to reward
             your team fairly — we&apos;ve built the right tool for you.

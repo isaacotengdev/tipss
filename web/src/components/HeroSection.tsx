@@ -30,7 +30,7 @@ export default function HeroSection() {
 
           {/* Subheadline */}
           <p className="text-muted-light text-lg leading-relaxed mb-10 max-w-md">
-            Two apps. One platform. Whether you&apos;re a solo creator or a growing
+            Whether you&apos;re a solo creator or a growing
             business — Tipss makes tipping seamless, fair, and instant.
           </p>
 

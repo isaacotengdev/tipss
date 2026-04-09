@@ -45,7 +45,7 @@ export default function Navbar() {
         {/* Logo */}
         <button onClick={() => handleNav('#home')} className="flex-shrink-0 leading-none flex items-center">
           <Image
-            src="/images/logo.png"
+            src="/images/logocopy.png"
             alt="Tipss"
             height={68}
             width={320}
@@ -70,7 +70,7 @@ export default function Navbar() {
             onClick={() => handleNav('#download')}
             className="bg-brand-green text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-green-600 transition-colors shadow-sm"
           >
-            Download Apps
+            Download App
           </button>
         </nav>
 
@@ -118,7 +118,7 @@ export default function Navbar() {
             onClick={() => handleNav('#download')}
             className="bg-brand-green text-white text-sm font-semibold px-5 py-2.5 rounded-full w-fit hover:bg-green-600 transition-colors"
           >
-            Download Apps
+            Download App
           </button>
         </div>
       </div>

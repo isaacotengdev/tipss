@@ -6,8 +6,8 @@ const TIPME_FEATURES = [
   { title: 'Custom Profile Link', desc: 'Your own tipping page with your photo, name, and bio. Share it on any platform.', emoji: '🔗' },
   { title: 'Instant Payouts', desc: 'Funds hit your connected account within minutes, not days. No waiting, no holds.', emoji: '⚡' },
   { title: 'Tip History', desc: 'See every tip with timestamps, amounts, and optional messages from tippers.', emoji: '📊' },
-  { title: 'Multiple Payment Methods', desc: 'Accept tips via debit card, credit card, Apple Pay, and Google Pay.', emoji: '💳' },
-  { title: 'Zero Recipient Fees', desc: "You keep 100% of every tip. We charge tippers a small convenience fee, not you.", emoji: '🎁' },
+  { title: 'Multiple Payment Methods', desc: 'Accept tips via your bank account or mobile money wallet.', emoji: '💳' },
+  { title: 'Zero Recipient Fees', desc: "You keep 100% of every tip.", emoji: '🎁' },
 ]
 
 const TIPBIZ_FEATURES = [
