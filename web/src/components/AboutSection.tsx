@@ -37,16 +37,6 @@ export default function AboutSection() {
               expressed and shared. From the solo performer on the street corner to the
               hotel with hundreds of staff — we&apos;ve built the tools to make every tip count.
             </p>
-            <a
-              href="mailto:hello@tipss.tech"
-              className="inline-flex items-center gap-2 text-brand-green font-medium hover:underline"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              hello@tipss.tech
-            </a>
-            <p className="text-muted-light text-sm mt-2">Founded 2025</p>
           </div>
 
         </div>
