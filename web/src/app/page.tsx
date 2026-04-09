@@ -5,6 +5,7 @@ import SolutionsSection from '@/components/SolutionsSection'
 import FeaturesSection from '@/components/FeaturesSection'
 import FaqSection from '@/components/FaqSection'
 import DownloadsSection from '@/components/DownloadsSection'
+import ContactSection from '@/components/ContactSection'
 import Footer from '@/components/Footer'
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
 
         <FaqSection />
         <DownloadsSection />
+        <ContactSection />
       </main>
       <Footer />
     </>
