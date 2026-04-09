@@ -45,11 +45,11 @@ export default function Navbar() {
         {/* Logo */}
         <button onClick={() => handleNav('#home')} className="flex-shrink-0 leading-none flex items-center">
           <Image
-            src="/images/logo.png"
+            src="/images/LOGO1.png"
             alt="Tipss"
-            height={76}
-            width={320}
-            style={{ objectFit: 'contain', height: '76px', width: '320px', display: 'block' }}
+            height={60}
+            width={240}
+            style={{ objectFit: 'contain', height: '60px', width: '240px', display: 'block' }}
             priority
           />
         </button>
