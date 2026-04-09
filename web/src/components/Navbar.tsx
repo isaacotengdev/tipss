@@ -41,15 +41,15 @@ export default function Navbar() {
           : 'bg-white/90 backdrop-blur-sm'
       }`}
     >
-      <div className="flex items-center justify-between pl-6 pr-8 h-[72px]">
+      <div className="flex items-center justify-between pl-6 pr-8 h-[80px]">
         {/* Logo */}
         <button onClick={() => handleNav('#home')} className="flex-shrink-0 leading-none flex items-center">
           <Image
-            src="/images/logocopy.png"
+            src="/images/logo.png"
             alt="Tipss"
-            height={68}
-            width={320}
-            style={{ objectFit: 'contain', height: '68px', width: 'auto', display: 'block' }}
+            height={76}
+            width={220}
+            style={{ objectFit: 'contain', height: '76px', width: 'auto', display: 'block' }}
             priority
           />
         </button>
