@@ -48,8 +48,8 @@ export default function Navbar() {
             src="/images/logo.png"
             alt="Tipss"
             height={76}
-            width={220}
-            style={{ objectFit: 'contain', height: '76px', width: 'auto', display: 'block' }}
+            width={320}
+            style={{ objectFit: 'contain', height: '76px', width: '320px', display: 'block' }}
             priority
           />
         </button>
