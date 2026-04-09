@@ -7,12 +7,13 @@ export default function AboutSection() {
         <div className="flex flex-col md:flex-row gap-12 items-center">
 
           {/* Left — Image */}
-          <div className="flex-1 w-full rounded-2xl overflow-hidden shadow-md min-h-[400px] relative">
+          <div className="flex-1 w-full rounded-2xl overflow-hidden shadow-md">
             <Image
               src="/images/tips-gratuities-happy-african.jpg"
               alt="Happy service workers"
-              fill
-              style={{ objectFit: 'cover' }}
+              width={800}
+              height={600}
+              style={{ width: '100%', height: 'auto', display: 'block' }}
               sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
